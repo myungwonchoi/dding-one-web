@@ -31,14 +31,19 @@ body {
     line-height: 1.6;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    /* 가로 중앙 정렬 추가 */
 }
 
 /* 마크다운 뷰어 컨테이너 (시작 위치 조정 및 폭 제한) */
 #markdown-viewer {
     /* 화면의 비율 높이부터 시작 */
     width: 100%;
-    max-width: 1800px;
-    font-size: 1.25rem;
+    max-width: 1000px;
+    /* 가독성을 위한 최대 너비 조정 */
+    font-size: 1.2rem;
+    margin: 0 auto;
+    /* 중앙 정렬 */
 }
 
 /* -------------------------------------------------------------------------- */
@@ -123,6 +128,16 @@ nav li.active a {
 
 #markdown-viewer img[alt*="w-full"] {
     width: 100%;
+}
+
+/* 아이콘용 스타일 (이모지처럼 사용) */
+#markdown-viewer img[alt*="w-icon"] {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 0;
+    margin: 0 0 0 0;
+    vertical-align: -15%;
 }
 
 /* 코드 블록 (Block) */

@@ -1,20 +1,22 @@
-# 디스코드 Webhook 설정 가이드
+# ![discord | w-icon](res/rendertracker/discord.svg) 디스코드 Webhook 설정 가이드
 
-RenderTracker 알림을 디스코드로 받기 위한 가이드입니다.
+디스코드 채널로 RenderTracker 알림을 받는 방법을 안내합니다.  
+(텔레그램이 모바일 알림에 더 최적화되어 있습니다.)
+
 ---
 
 ## 1. 디스코드 Webhook URL 생성
 
 1.  상단 서버 이름을 클릭하여 서버 설정을 클릭합니다. 또는 서버 채널 우측의 톱니바퀴를 클릭합니다.
 
-    ![서버 설정 | w-400](res/rendertracker/discord-serversettings.webp)
-    ![채널 설정 | w-400](res/rendertracker/discord-channelsettings.webp)
+    ![discord-serversettings | w-400](res/rendertracker/discord-serversettings.webp)
+    ![discord-channelsettings | w-400](res/rendertracker/discord-channelsettings.webp)
 
 <br>
 
 2.  왼쪽 메뉴에서 **[연동]** 탭을 클릭 후 **[웹후크 만들기]** 버튼을 클릭합니다.
 
-    ![웹후크 만들기 | w-1000](res/rendertracker/discord-link.webp)
+    ![discord-link | w-1000](res/rendertracker/discord-link.webp)
 
 <br>
 
@@ -22,17 +24,17 @@ RenderTracker 알림을 디스코드로 받기 위한 가이드입니다.
     *   **이름**: Webhook 이름 (예: `RenderTracker`)
     *   **채널**: 알림을 보낼 채널
 
-    ![웹후크 URL 복사 | w-1000](res/rendertracker/discord-link-copy.webp)
+    ![discord-link-copy | w-1000](res/rendertracker/discord-link-copy.webp)
 
 ---
 
 ## 2. RenderTracker 앱 적용
 
-1.  **디스코드 아이콘 활성화**: 앱 상단의 디스코드 아이콘 활성화(컬러)
+1.  앱 우측 상단의 **[디스코드 아이콘]** 을 활성화합니다.
 
-2.  **설정 열기**: 앱 우측 상단의 **톱니바퀴 아이콘** 클릭
+2.  앱 우측 상단의 **[톱니바퀴 아이콘]** 을 클릭합니다.
 
-3.  **주소 입력**: **[디스코드 Webhook]** 섹션의 **[Webhook URL]** 칸에 복사한 주소 붙여넣기 (Ctrl + V)
+3.  **[디스코드 Webhook]** 섹션의 **[Webhook URL]** 칸에 복사한 주소를 붙여넣습니다.
 
 ---
 
@@ -45,9 +47,11 @@ RenderTracker 알림을 디스코드로 받기 위한 가이드입니다.
 ---
 
 ## ⚠️ 주의사항
-*   디스코드 특성 상 모바일 알림이 실시간으로 작동하지 않으므로 수동 확인이 필요합니다.
+*   모바일 디스코드는 알림이 실시간으로 작동하지 않으므로 수동 확인이 필요합니다.  
+    (텔레그램을 사용하시는 것을 권장합니다.)
 
-*   컴퓨터에 디스코드가 켜져있으면 모바일에 알림이 오지 않습니다.
+*   컴퓨터에 디스코드가 켜져있으면 모바일에 디스코드 알림이 오지 않습니다.  
+    (텔레그램을 사용하시는 것을 권장합니다.)
 
-*   웹훅 URL이 유출되면 누구나 메시지를 보낼 수 있으니 타인에게 공유하지 마세요.
+*   Webhook URL이 유출되면 누구나 메시지를 보낼 수 있으니 타인에게 공유하지 마세요.
 
