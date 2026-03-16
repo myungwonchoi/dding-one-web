@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RenderTracker - Plugin Guide</title>
+    <meta name="description"
+        content="Official guide for the RenderTracker plugin. Learn how to track your rendering progress efficiently.">
+    <link rel="stylesheet" href="style.css">
+</head>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <!-- 플러그인 선택 메뉴 (JSON에서 동적 로드) -->
+            <div class="plugin-selector">
+                <select id="plugin-select">
+                    <!-- 스크립트에서 자동 생성됨 -->
+                </select>
+            </div>
+            <nav>
+                <ul id="menu-list">
+                    <!-- 스크립트에서 동적으로 생성됨 -->
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="content">
+            <div id="markdown-viewer">주제를 선택해 주세요.</div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

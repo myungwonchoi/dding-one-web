@@ -1,0 +1,50 @@
+{
+    "plugins": [
+        {
+            "id": "mwcharacterpicker",
+            "name": "MW Character Picker",
+            "docs": [
+                {
+                    "label": "Intro",
+                    "file": "intro.md"
+                }
+            ]
+        },
+        {
+            "id": "rendertracker",
+            "name": "RenderTracker",
+            "docs": [
+                {
+                    "label": "Install",
+                    "file": "install.md"
+                },
+                {
+                    "label": "Intro",
+                    "file": "intro.md"
+                },
+                {
+                    "label": "Usage",
+                    "file": "usage.md"
+                },
+                {
+                    "label": "Discord",
+                    "file": "discord.md"
+                },
+                {
+                    "label": "Telegram",
+                    "file": "telegram.md"
+                }
+            ]
+        },
+        {
+            "id": "rsnodetools",
+            "name": "RS Node Tools",
+            "docs": [
+                {
+                    "label": "Intro",
+                    "file": "intro.md"
+                }
+            ]
+        }
+    ]
+}

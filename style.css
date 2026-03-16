@@ -1,0 +1,17 @@
+body { margin: 0; font-family: sans-serif; background: #111; color: #ccc; }
+.container { display: flex; min-height: 100vh; }
+.sidebar { width: 200px; padding: 20px; border-right: 1px solid #333; }
+.content { flex: 1; padding: 20px 40px; line-height: 1.6; }
+
+select { width: 100%; margin-bottom: 20px; padding: 5px; background: #222; color: #eee; border: 1px solid #444; }
+nav ul { list-style: none; padding: 0; }
+nav li { margin-bottom: 8px; }
+nav a { color: #888; text-decoration: none; font-size: 0.9rem; }
+nav a:hover { color: #eee; }
+nav li.active a { color: #007bff; font-weight: bold; }
+
+/* Markdown Styling */
+pre { background: #222; padding: 10px; border-radius: 4px; overflow-x: auto; }
+code { font-family: monospace; background: #222; padding: 2px 4px; }
+img { max-width: 100%; }
+blockquote { border-left: 4px solid #333; margin: 0; padding-left: 15px; color: #888; }
