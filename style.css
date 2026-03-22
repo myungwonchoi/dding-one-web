@@ -25,6 +25,10 @@ body {
     padding: 20px;
     border-right: 1px solid #333;
     /* 우측 구분선 */
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
 }
 
 /* 본문 콘텐츠 영역 */
@@ -44,7 +48,7 @@ body {
     width: 100%;
     max-width: 1000px;
     /* 가독성을 위한 최대 너비 조정 */
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     margin: 0 auto;
     /* 중앙 정렬 */
 }
@@ -105,8 +109,13 @@ nav li.active a {
 }
 
 /* 개별 이미지 크기 조절 (Alt 텍스트에 키워드 포함 시 작동) */
-#markdown-viewer img[alt*="w-250"] {
-    width: 250px;
+
+#markdown-viewer img[alt*="w-200"] {
+    width: 200px;
+}
+
+#markdown-viewer img[alt*="w-300"] {
+    width: 300px;
 }
 
 #markdown-viewer img[alt*="w-400"] {
