@@ -58,6 +58,13 @@ PC에 텔레그램이 설치되어 있어야 합니다.
 7.  이동한 봇 채팅방에서 **[시작]** 버튼을 클릭합니다.  
 ![botfather-newbot-start | w-600](res/rendertracker/telegram-botfather-botstart.webp)
 
+<br>
+
+![RenderTracker 프로필 이미지 | w-200](res/rendertracker/rendertracker-512x512-sharp.png)  
+*RenderTracker 프로필 이미지*
+
+**`BotFather > Open > RenderTracker > Edit Info > Set New Photo`** 에서 봇 프로필 이미지를 변경할 수 있습니다.
+
 ---
 
 ## 3. RenderTracker에서 텔레그램 봇 토큰 및 Chat ID 적용

@@ -5,9 +5,9 @@
 
 ## 후원 방법
 
-* **[PayPal](https://www.paypal.com/paypalme/myungwonchoi)**
-* **[Gumroad](https://ddingone.gumroad.com/)**
-* **[카카오페이 (Kakao Pay)](https://qr.kakaopay.com/)**
-* **[토스뱅크 (Toss Bank)](https://toss.me/me/ddingone)**
+<a href="https://www.paypal.com/paypalme/myungwonchoi" target="_blank"><button>PayPal</button></a>
+<a href="https://ddingone.gumroad.com/" target="_blank"><button>Gumroad</button></a>
+<button onclick="showQRPopup('res/support/kakaopay_qrcode.png')">카카오페이 (Kakao Pay)</button>
+<button onclick="showQRPopup('res/support/toss-qrcode.jpg')">토스뱅크 (Toss Bank)</button>
 
 감사합니다!

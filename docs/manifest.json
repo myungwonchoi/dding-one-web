@@ -7,16 +7,6 @@
     ],
     "plugins": [
         {
-            "id": "mwcharacterpicker",
-            "name": "MW Character Picker",
-            "docs": [
-                {
-                    "label": "Intro",
-                    "file": "intro.md"
-                }
-            ]
-        },
-        {
             "id": "rendertracker",
             "name": "RenderTracker",
             "docs": [
@@ -29,12 +19,26 @@
                     "file": "install-run.md"
                 },
                 {
+                    "label": "App Guide",
+                    "file": "app-guide.md"
+                },
+                {
                     "label": "Discord Webhook",
                     "file": "discord.md"
                 },
                 {
                     "label": "Telegram Bot",
                     "file": "telegram.md"
+                }
+            ]
+        },
+        {
+            "id": "mwcharacterpicker",
+            "name": "MW Character Picker",
+            "docs": [
+                {
+                    "label": "Intro",
+                    "file": "intro.md"
                 }
             ]
         },

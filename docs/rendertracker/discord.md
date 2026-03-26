@@ -3,12 +3,17 @@
 디스코드 채널로 RenderTracker 알림을 받는 방법을 안내합니다.  
 PC에 디스코드가 설치되어 있어야 합니다.
 
+![discord-message | w-600](res/rendertracker/discord-message.webp)
+
 ---
 
 ## 1. 디스코드 Webhook URL 생성
+RenderTracker 알림을 받을 디스코드 서버가 필요합니다. (DM으로는 알림을 받을 수 없습니다)  
+나만의 서버를 만들거나, 디스코드 서버 관리 권한이 필요합니다.
+
+<br>
 
 1.  디스코드 서버 이름을 클릭하여 서버 설정을 클릭합니다. 또는 서버 채널 우측의 톱니바퀴를 클릭합니다.  
-(나만의 서버를 만들거나, 디스코드 서버를 관리할 수 있는 권한이 필요합니다.)  
 ![discord-serversettings | w-300](res/rendertracker/discord-serversettings.webp)
 ![discord-channelsettings | w-300](res/rendertracker/discord-channelsettings.webp)
 
@@ -21,8 +26,12 @@ PC에 디스코드가 설치되어 있어야 합니다.
 
 3.  **[이름]** 과 **[채널]** 을 입력 후 **[웹후크 URL 복사]** 버튼을 클릭하여 복사합니다.  
 ![discord-link-copy | w-1000](res/rendertracker/discord-link-copy.webp)
-    *   **이름**: Webhook 이름 (예: `RenderTracker`)  
+    *   **이름**: Webhook 이름 (예: `RenderTracker`)
     *   **채널**: 알림을 보낼 채널
+<br>
+
+![RenderTracker 프로필 이미지 | w-200](res/rendertracker/rendertracker-512x512-sharp.png)  
+*RenderTracker 프로필 이미지*
 
 ---
 
@@ -54,10 +63,8 @@ PC에 디스코드가 설치되어 있어야 합니다.
 ---
 
 ## ⚠️ 주의사항
-*   모바일 디스코드는 알림이 실시간으로 작동하지 않으므로 수동 확인이 필요합니다.  
-    (텔레그램을 사용하시는 것을 권장합니다.)
-
-*   컴퓨터에 디스코드가 켜져있으면 모바일에 디스코드 알림이 오지 않습니다.  
+*   PC 디스코드가 켜져있으면 모바일 알림이 오지 않습니다.  
+    PC 디스코드가 꺼져있더라도 모바일 알림은 실시간으로 작동하지 않기 때문에 어느정도 수동 확인이 필요합니다.  
     (텔레그램을 사용하시는 것을 권장합니다.)
 
 *   Webhook URL이 유출되면 누구나 메시지를 보낼 수 있으니 타인에게 노출되지 않도록 주의하세요.

@@ -77,4 +77,18 @@ async function init() {
     }
 }
 
-document.addEventListener('DOMContentLoaded', init);
+function showQRPopup(src) {
+    document.getElementById('qr-popup-img').src = src;
+    document.getElementById('qr-popup').style.display = 'flex';
+}
+
+function closeQRPopup() {
+    document.getElementById('qr-popup').style.display = 'none';
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    init();
+    document.getElementById('qr-popup').addEventListener('click', (e) => {
+        if (e.target === e.currentTarget) closeQRPopup();
+    });
+});
