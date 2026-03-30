@@ -134,7 +134,13 @@ body {
     font-size: 1.1rem;
     font-weight: 700;
     color: var(--text-primary);
+    text-decoration: none;
     letter-spacing: -0.01em;
+    transition: color var(--transition);
+}
+
+.topbar-title:hover {
+    color: var(--accent);
 }
 
 /* Topbar nav */

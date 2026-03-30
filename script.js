@@ -79,9 +79,14 @@ function setLang(lang) {
     }
 
     // Fallback or early redirection
-    const p = manifest.plugins[0];
-    const ld = p.langs[currentLang] || p.langs[manifest.defaultLang];
-    location.hash = `#/plugins/${p.id}/${ld.docs[0].file}`;
+    if (manifest.about) {
+        const entry = manifest.about[currentLang] || manifest.about[manifest.defaultLang];
+        location.hash = `#/about/${entry.file.split('/').pop()}`;
+    } else {
+        const p = manifest.plugins[0];
+        const ld = p.langs[currentLang] || p.langs[manifest.defaultLang];
+        location.hash = `#/plugins/${p.id}/${ld.docs[0].file}`;
+    }
 }
 
 function rebuildPluginSelector() {
@@ -155,6 +160,13 @@ async function route() {
     skipScroll = false;
 
     const [_, pid, file, extra] = location.hash.split('/');
+
+    // Handle empty hash (main entry point) -> redirect to About
+    if (!pid && manifest.about) {
+        const entry = manifest.about[currentLang] || manifest.about[manifest.defaultLang];
+        location.hash = `#/about/${entry.file.split('/').pop()}`;
+        return;
+    }
 
     updateTopbarNav(pid);
 
