@@ -37,11 +37,11 @@
                             "file": "intro.md"
                         },
                         {
-                            "label": "Discord",
+                            "label": "디스코드 Webhook",
                             "file": "discord.md"
                         },
                         {
-                            "label": "Telegram",
+                            "label": "텔레그램 Bot",
                             "file": "telegram.md"
                         }
                     ]
@@ -54,11 +54,11 @@
                             "file": "intro.md"
                         },
                         {
-                            "label": "Discord",
+                            "label": "Discord Webhook",
                             "file": "discord.md"
                         },
                         {
-                            "label": "Telegram",
+                            "label": "Telegram Bot",
                             "file": "telegram.md"
                         }
                     ]

@@ -13,7 +13,7 @@
 
 <br>
 
-2.  하단의 **`시작(Start)`** 버튼을 클릭합니다.  
+2.  하단의 **`시작`** 버튼을 클릭합니다.  
 ![userinfobot-start | w-600](res/rendertracker/telegram-userinfo-startbutton.webp)
 
 <br>
