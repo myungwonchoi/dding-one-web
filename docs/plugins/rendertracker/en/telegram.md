@@ -1,4 +1,4 @@
-# ![telegram | w-icon](res/rendertracker/telegram.svg) Telegram Bot Setup Guide
+# Telegram Bot Setup Guide
 
 > This guide explains how to receive RenderTracker notifications via a Telegram bot.
 > Telegram must be installed on your PC.

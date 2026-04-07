@@ -153,6 +153,114 @@ renderer.link = ({ href, title, text }) =>
     `<a href="${href}"${title ? ` title="${title}"` : ''} target="_blank" rel="noopener noreferrer">${text}</a>`;
 marked.use({ renderer });
 
+const CAPTION_TAGS = new Set(['BR', 'EM', 'STRONG']);
+
+function serializeNode(node) {
+    if (node.nodeType === Node.TEXT_NODE) return node.textContent;
+    if (node.nodeType === Node.ELEMENT_NODE) return node.outerHTML;
+    return '';
+}
+
+function hasMeaningfulContent(node) {
+    if (node.nodeType === Node.TEXT_NODE) {
+        return node.textContent.trim().length > 0;
+    }
+
+    return node.nodeType === Node.ELEMENT_NODE && node.tagName !== 'BR';
+}
+
+function isAllowedCaptionNode(node) {
+    if (node.nodeType === Node.TEXT_NODE) return true;
+    return node.nodeType === Node.ELEMENT_NODE && CAPTION_TAGS.has(node.tagName);
+}
+
+function trimTrailingWhitespace(nodes) {
+    const trimmed = [...nodes];
+
+    while (trimmed.length > 0) {
+        const last = trimmed.at(-1);
+        if (last.nodeType === Node.TEXT_NODE && last.textContent.trim().length === 0) {
+            trimmed.pop();
+            continue;
+        }
+
+        if (last.nodeType === Node.ELEMENT_NODE && last.tagName === 'BR') {
+            trimmed.pop();
+            continue;
+        }
+
+        break;
+    }
+
+    return trimmed;
+}
+
+function parseImageCardParagraph(paragraph) {
+    const childNodes = Array.from(paragraph.childNodes);
+    const imageIndex = childNodes.findIndex(
+        (node) => node.nodeType === Node.ELEMENT_NODE && node.tagName === 'IMG'
+    );
+
+    if (imageIndex === -1) return null;
+
+    const image = childNodes[imageIndex];
+    const beforeNodes = trimTrailingWhitespace(childNodes.slice(0, imageIndex));
+    const afterNodes = childNodes.slice(imageIndex + 1);
+
+    if (afterNodes.some((node) => !isAllowedCaptionNode(node))) return null;
+
+    return {
+        image,
+        beforeHtml: beforeNodes.map(serializeNode).join('').trim(),
+        captionHtml: afterNodes.map(serializeNode).join('').trim(),
+        hasLeadingContent: beforeNodes.some(hasMeaningfulContent),
+    };
+}
+
+function createImageCard(image, captionHtml) {
+    const figure = document.createElement('figure');
+    figure.className = 'image-card';
+
+    image.classList.add('image-card-image');
+    figure.appendChild(image);
+
+    if (!captionHtml) return figure;
+
+    const figcaption = document.createElement('figcaption');
+    figcaption.className = 'image-card-caption';
+    figcaption.innerHTML = captionHtml;
+    figure.appendChild(figcaption);
+
+    return figure;
+}
+
+function decorateMarkdownImages() {
+    const viewer = $('markdown-viewer');
+    if (!viewer) return;
+
+    Array.from(viewer.querySelectorAll('p')).forEach((p) => {
+        const imageCard = parseImageCardParagraph(p);
+        if (!imageCard) return;
+
+        const figure = createImageCard(imageCard.image, imageCard.hasLeadingContent ? '' : imageCard.captionHtml);
+
+        if (imageCard.hasLeadingContent) {
+            const textParagraph = document.createElement('p');
+            textParagraph.innerHTML = imageCard.beforeHtml;
+            p.replaceWith(textParagraph, figure);
+            return;
+        }
+
+        p.replaceWith(figure);
+    });
+}
+
+async function renderMarkdownDoc(path) {
+    const res = await fetch(path);
+    $('markdown-viewer').innerHTML = res.ok ? marked.parse(await res.text()) : 'File not found.';
+    decorateMarkdownImages();
+}
+
 // ---------- Routing ----------
 
 async function route() {
@@ -180,8 +288,7 @@ async function route() {
 
         $('plugin-dropdown-label').textContent = aboutEntry.label;
         $('menu-list').innerHTML = `<li class="active"><a href="#/about/${aboutEntry.file.split('/').pop()}">${aboutEntry.label}</a></li>`;
-        const res = await fetch(`docs/${aboutEntry.file}`);
-        $('markdown-viewer').innerHTML = res.ok ? marked.parse(await res.text()) : 'File not found.';
+        await renderMarkdownDoc(`docs/${aboutEntry.file}`);
         if (!currentSkipScroll) window.scrollTo(0, 0);
         return;
     }
@@ -196,8 +303,7 @@ async function route() {
 
         $('plugin-dropdown-label').textContent = supportEntry.label;
         $('menu-list').innerHTML = `<li class="active"><a href="#/support/${file}">${supportEntry.label}</a></li>`;
-        const res = await fetch(`docs/${supportEntry.file}`);
-        $('markdown-viewer').innerHTML = res.ok ? marked.parse(await res.text()) : 'File not found.';
+        await renderMarkdownDoc(`docs/${supportEntry.file}`);
         if (!currentSkipScroll) window.scrollTo(0, 0);
         return;
     }
@@ -228,8 +334,7 @@ async function route() {
     ).join('');
 
     // Load document
-    const res = await fetch(`docs/${langData.path}/${doc.file}`);
-    $('markdown-viewer').innerHTML = res.ok ? marked.parse(await res.text()) : 'File not found.';
+    await renderMarkdownDoc(`docs/${langData.path}/${doc.file}`);
     if (!currentSkipScroll) window.scrollTo(0, 0);
 }
 

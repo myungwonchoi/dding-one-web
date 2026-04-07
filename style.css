@@ -7,7 +7,6 @@
     --bg-hover: rgba(255, 255, 255, 0.06);
     --border: rgba(255, 255, 255, 0.1);
     --border-strong: rgba(255, 255, 255, 0.14);
-    --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.28);
     --shadow-deep: 0 22px 60px rgba(0, 0, 0, 0.45);
 
     --text-primary: rgba(255, 255, 255, 0.92);
@@ -43,7 +42,7 @@
     --radius-xl: 16px;
 
     --sidebar-width: 280px;
-    --content-width: 920px;
+    --content-width: 820px;
     --transition: 160ms ease;
 }
 
@@ -212,7 +211,7 @@ select {
 .content {
     flex: 1;
     min-width: 0;
-    padding: var(--space-8) var(--space-8) 56px;
+    padding: var(--space-8) 28px 56px;
     display: flex;
     justify-content: center;
 }
@@ -479,28 +478,45 @@ hr {
     max-width: 100%;
     margin: 0.25rem 0.25rem 0 0;
     border-radius: var(--radius-md);
-    border: 1px solid var(--border);
+    border: 1px solid var(--border-strong);
+    background: rgba(255, 255, 255, 0.03);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.03),
+        0 10px 24px rgba(0, 0, 0, 0.22);
 }
 
-#markdown-viewer p:has(> img:only-child) {
-    margin: 0 0 1rem;
-    padding: 12px;
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
-    background: var(--bg-elevated);
-    box-shadow: var(--shadow-card);
+#markdown-viewer .image-card {
+    margin: 0 0 0.55rem;
+    width: fit-content;
+    max-width: 100%;
+    text-align: center;
 }
 
-#markdown-viewer p:has(> img:only-child) > img {
+#markdown-viewer .image-card > img.image-card-image {
     display: block;
-    width: 100%;
-    margin: 0;
-    border: 0;
-    border-radius: calc(var(--radius-md) - 1px);
+    max-width: 100%;
+    margin: 0 auto;
+    border-color: rgba(255, 255, 255, 0.12);
+    box-shadow:
+        0 1px 0 rgba(255, 255, 255, 0.04),
+        0 12px 28px rgba(0, 0, 0, 0.24);
 }
 
-#markdown-viewer p:has(> img:only-child) + p {
-    margin-top: -0.25rem;
+#markdown-viewer .image-card-caption {
+    margin-top: 0.45rem;
+    padding: 0 4px;
+    font-size: var(--font-size-xs);
+    line-height: 1.45;
+    color: var(--text-muted);
+}
+
+#markdown-viewer .image-card-caption em {
+    color: inherit;
+    font-style: normal;
+}
+
+#markdown-viewer .image-card-caption strong {
+    color: var(--text-secondary);
 }
 
 #markdown-viewer img[alt*="w-100"] {
@@ -690,7 +706,7 @@ hr {
     }
 
     .content {
-        padding: 28px 20px 44px;
+        padding: 28px 22px 44px;
     }
 }
 

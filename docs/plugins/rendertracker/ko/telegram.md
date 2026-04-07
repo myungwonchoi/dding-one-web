@@ -1,4 +1,4 @@
-# ![telegram | w-icon](res/rendertracker/telegram.svg) 텔레그램 Bot 설정 가이드
+# 텔레그램 Bot 설정 가이드
 
 > 텔레그램 봇으로 RenderTracker 알림을 받는 방법을 안내합니다.  
 > PC에 텔레그램이 설치되어 있어야 합니다.  

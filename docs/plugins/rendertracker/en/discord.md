@@ -1,4 +1,4 @@
-# ![discord | w-icon](res/rendertracker/discord.svg) Discord Webhook Setup Guide
+# Discord Webhook Setup Guide
 
 > This guide explains how to receive RenderTracker notifications in a Discord channel.
 > Discord must be installed on your PC.
