@@ -4,11 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
     <title>RenderTracker - Plugin Guide</title>
     <meta name="description"
         content="Official guide for the RenderTracker plugin. Learn how to track your rendering progress efficiently.">
-    <link rel="stylesheet" href="style.css?v=2">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css?v=3">
 </head>
+
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <body>
@@ -61,7 +66,7 @@
 
     <div id="qr-popup" style="display:none" role="dialog" aria-modal="true" aria-label="QR Code">
         <div id="qr-popup-box">
-            <button id="qr-popup-close" onclick="closeQRPopup()" aria-label="Close">✕</button>
+            <button id="qr-popup-close" onclick="closeQRPopup()" aria-label="Close">&times;</button>
             <img id="qr-popup-img" src="" alt="QR Code">
         </div>
     </div>
