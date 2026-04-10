@@ -1,6 +1,6 @@
 const $ = (id) => document.getElementById(id);
 let manifest = {};
-let currentLang = 'ko';
+let currentLang = 'en';
 let skipScroll = false;
 
 // ---------- Language ----------

@@ -6,8 +6,8 @@ def generate_manifest():
     manifest_path = os.path.join(docs_dir, 'manifest.json')
     
     # Configuration
-    default_lang = 'ko'
-    langs = ['ko', 'en']
+    default_lang = 'en'
+    langs = ['en', 'ko']
     
     # 1. About section
     about_data = {}
