@@ -62,6 +62,14 @@
                             "file": "intro.md"
                         },
                         {
+                            "label": "Cinema 4D Plugin",
+                            "file": "cinema4d.md"
+                        },
+                        {
+                            "label": "Blender Add-on",
+                            "file": "blender.md"
+                        },
+                        {
                             "label": "Discord Webhook",
                             "file": "discord.md"
                         },

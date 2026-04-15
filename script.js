@@ -417,10 +417,12 @@ async function init() {
         if (pluginsLink && manifest.plugins?.length) {
             pluginsLink.onclick = (e) => {
                 e.preventDefault();
-                showPluginLoadingShell();
                 const p = manifest.plugins[0];
                 const ld = p.langs[currentLang] || p.langs[manifest.defaultLang];
-                location.hash = `#/plugins/${p.id}/${ld.docs[0].file}`;
+                const targetHash = `#/plugins/${p.id}/${ld.docs[0].file}`;
+                if (location.hash === targetHash) return;
+                showPluginLoadingShell();
+                location.hash = targetHash;
             };
         }
 
