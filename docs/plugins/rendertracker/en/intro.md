@@ -5,6 +5,7 @@
 > [RenderTracker](https://ddingone.gumroad.com/l/RenderTracker) monitors the rendering progress of 3D software (Cinema 4D, Blender) in real time and sends notifications via messenger (Discord, Telegram).  
 > Supports `Windows 11`, `Blender 4.2` or later and `Cinema 4D 2023.2.2, 2024.5.1, 2025.3.0, 2026.1.4`.  
 > *It may not work for Cinema 4D versions below these specific releases.*
+<div class="warning-box">⚠️ 2026-04-17 <br> You must keep the tab with the rendering process selected to receive notifications normally. If you want to receive notifications reliably, please keep the rendering process tab open! </div>  
 
 ---
 ![guide-mainui | w-800](res/rendertracker/guide-mainui.webp)  
