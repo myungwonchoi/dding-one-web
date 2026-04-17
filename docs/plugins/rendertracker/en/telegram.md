@@ -1,7 +1,6 @@
 # Telegram Bot Setup
 
 > This guide explains how to receive RenderTracker notifications via a Telegram bot.
-> Telegram must be installed on your PC.
 
 ![telegram-message | w-500](res/rendertracker/telegram-message.webp)
 

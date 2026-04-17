@@ -1,7 +1,6 @@
 # 텔레그램 Bot 설정 방법
 
 > 텔레그램 봇으로 RenderTracker 알림을 받는 방법을 안내합니다.  
-> PC에 텔레그램이 설치되어 있어야 합니다.  
 
 ![telegram-message | w-500](res/rendertracker/telegram-message.webp)
 

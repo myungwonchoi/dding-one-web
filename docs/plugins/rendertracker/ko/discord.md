@@ -1,7 +1,6 @@
 # 디스코드 Webhook 설정 방법
 
 > 디스코드 채널로 RenderTracker 알림을 받는 방법을 안내합니다.  
-> PC에 디스코드가 설치되어 있어야 합니다.
 
 ![discord-message | w-600](res/rendertracker/discord-message.webp)
 
