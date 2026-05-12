@@ -1,5 +1,10 @@
 # Patch Notes
 
+### V1.0.2 - 2026. 05. 12
+- **Bug fix**: Fixed issue where opening Octane LiveViewer was detected as rendering
+
+---
+
 ### V1.0.1 - 2026. 04. 20
 - **Bug fix**: Notifications not working when past render records selected
 - **Bug fix**: Project file path opens in wrong path
